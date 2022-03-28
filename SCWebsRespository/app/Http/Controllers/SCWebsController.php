@@ -33,7 +33,7 @@ class SCWebsController extends Controller
     public function edit($id)
     {
         $webs = DB::select('SELECT * FROM webs WHERE id = ?', [$id]);
-        return view('update', ['webs' => $webs]);
+        return view('update')->with('web', $webs);
     }
     public function update(Request $request, $id)
     {

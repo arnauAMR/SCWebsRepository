@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Webs Clientes SC</title>
 </head>
 
@@ -15,8 +16,9 @@
         <h2 class="h2">Webs de clientes SC</h2>
 
 
-        <h6 class="h6 col mt-5">Listado de las webs de los clientes de Sayos Carrera.</h6>
-        <h2><a class="btn btn-primary col-md-3 ml-3" type="button" href="/nueva-web">Nueva web</a></h2>
+        <h6 class="h6 mt-5">Listado de las webs de los clientes de Sayos Carrera.</h6>
+        <h2><a class="btn btn-primary col-md-2" type="button" href="/nueva-web"><i class="fa fa-plus-square"
+                    style="margin-right: 5%"></i>Nueva web</a></h2>
 
         <table id="example" class="table table-hover table-striped align-middle mb-0 mt-3 bg-white">
 
@@ -54,7 +56,7 @@
                             <p class="fw-bold mb-1">{{ $web->abreviacion }}</p>
                         </td>
 
-                        <td>
+                        <td id="estado">
                             <span class="badge badge-success rounded-pill d-inline">{{ $web->estado }}</span>
                         </td>
 
@@ -62,13 +64,15 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <a href="/editar-web/{{ $web->id }}"
-                                        class="btn btn-secondary btn-sm btn-rounded">Editar</a>
+                                        class="btn btn-secondary btn-sm btn-rounded"><i
+                                            class="fa fa-edit"></i>Editar</a>
                                 </div>
                                 <div class="col-md-3">
                                     <form method="post" action="/borrar-web/{{ $web->id }}">
                                         @csrf
                                         {{-- @method('delete') --}}
-                                        <button type="submit" class="btn btn-danger btn-sm btn-rounded">Eliminar</button>
+                                        <button type="submit" class="btn btn-danger btn-sm btn-rounded"><i
+                                                class="fa fa-trash"></i>Eliminar</button>
                                     </form>
                                 </div>
                             </div>
